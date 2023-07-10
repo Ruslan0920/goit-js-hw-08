@@ -4,6 +4,8 @@ import { galleryItems } from './gallery-items';
 
 console.log(galleryItems);
 
+import SimpleLightbox from "simplelightbox";
+
 const fullGallery = document.querySelector('.gallery');
 
 const createFullGallery = galleryItems.map(({ preview, original, description }) =>
@@ -28,3 +30,4 @@ function onClick(event) {
         return;
     }
 }
+
