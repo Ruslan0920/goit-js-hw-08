@@ -5,6 +5,7 @@ import { galleryItems } from './gallery-items';
 console.log(galleryItems);
 
 import SimpleLightbox from "simplelightbox";
+console.log(SimpleLightbox);
 
 const fullGallery = document.querySelector('.gallery');
 
