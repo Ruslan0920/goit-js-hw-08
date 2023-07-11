@@ -5,7 +5,9 @@ import { galleryItems } from './gallery-items';
 console.log(galleryItems);
 
 import SimpleLightbox from "simplelightbox";
-console.log(SimpleLightbox);
+// console.log(SimpleLightbox);
+
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 const fullGallery = document.querySelector('.gallery');
 
@@ -14,21 +16,15 @@ const createFullGallery = galleryItems.map(({ preview, original, description }) 
     <a class = "gallery__link" href="${original}">
     <img class = "gallery__image"
         src="${preview}"
-        data-source="${original}"
         alt="${description}">
     </a>
     </li>`
 );
 
 fullGallery.insertAdjacentHTML('beforeend', createFullGallery.join(" "));
-fullGallery.addEventListener('click', onClick);
 
-function onClick(event) {
-    event.preventDefault();
-    const newTarget = event.target;
+let gallery = new SimpleLightbox('.gallery a');
+gallery.on('show.simplelightbox', function(){});
 
-    if (!newTarget.classList.contains('gallery__image')) {
-        return;
-    }
-}
+// { captionPosition: "bottom", captionsData:"alt", captionDelay: 250}
 
