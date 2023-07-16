@@ -33,7 +33,7 @@ fullGallery.insertAdjacentHTML('beforeend', createFullGallery.join(" "));
 // }
 
 let gallery = new SimpleLightbox('.gallery a');
-gallery.on('show.simplelightbox', 'captionsData: alt', 'captionPosition: bottom', 'captionDelay: 250');
+gallery.on('show.simplelightbox');
 
 // { captionPosition: "bottom", captionsData:"alt", captionDelay: 250}
 
