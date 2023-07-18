@@ -22,16 +22,6 @@ const createFullGallery = galleryItems.map(({ preview, original, description }) 
 );
 
 fullGallery.insertAdjacentHTML('beforeend', createFullGallery.join(" "));
-
-// function onClick(event) {
-//     event.preventDefault();
-//     const newTarget = event.target;
-
-//     if (!newTarget.classList.contains('gallery__image')) {
-//         return;
-//     }
-// }
-
 let gallery = new SimpleLightbox('.gallery a');
 gallery.on('show.simplelightbox');
 
