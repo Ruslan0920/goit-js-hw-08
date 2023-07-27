@@ -36,6 +36,6 @@ function fillingForm() {
     // console.log(savedValues);
     if (savedValues) {
         refs.email.value = savedValues.email || "";
-        refs.textarea.value = savedValues.message || "";
+        refs.textarea.value = savedValues.message ||"";
     }
 }
