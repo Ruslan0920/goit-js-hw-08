@@ -1,0 +1,2 @@
+!function(){console.log("Hello world");var e={form:document.querySelector(".feedback-form"),email:document.querySelector("input"),textarea:document.querySelector("textarea")};console.log(e.form),console.log(e.email),console.log(e.textarea),e.form.addEventListener("input",(function(l){console.log(l),console.log(e.email.value),console.log(e.textarea.value),e.email.value=o.mail,e.textarea.value=o.message})),console.log(form);var o={}}();
+//# sourceMappingURL=03-feedback.7d714db2.js.map

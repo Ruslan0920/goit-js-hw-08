@@ -1,0 +1,2 @@
+console.log("Hello world");const e={form:document.querySelector(".feedback-form"),email:document.querySelector("input"),textarea:document.querySelector("textarea")};console.log(e.form),console.log(e.email),console.log(e.textarea),e.form.addEventListener("input",(function(l){console.log(l),console.log(e.email.value),console.log(e.textarea.value),e.email.value=o.mail,e.textarea.value=o.message})),console.log(form);const o={};
+//# sourceMappingURL=03-feedback.b8755481.js.map
