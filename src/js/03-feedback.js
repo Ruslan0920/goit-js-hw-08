@@ -11,19 +11,19 @@ const LOCALSTORAGE_KEY = "feedback-form-state";
 let objectLocalStorage = {};
 //  console.log(objectLocalStorage);
 
-refs.form.addEventListener('input', throttle(formInput, 500));
-refs.form.addEventListener('submit', formSubmit);
+refs.form.addEventListener('input', throttle(inputForm, 500));
+refs.form.addEventListener('submit', submitForm);
 
 fillingForm();
 
-function formInput(evt) {
+function inputForm(evt) {
     objectLocalStorage.email = refs.email.value;
     objectLocalStorage.message = refs.textarea.value;
 
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(objectLocalStorage));
 }
 
-function formSubmit(evt) {
+function submitForm(evt) {
     evt.preventDefault();
     evt.currentTarget.reset();
     localStorage.removeItem(LOCALSTORAGE_KEY);
