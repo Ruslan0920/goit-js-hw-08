@@ -19,6 +19,7 @@ const playVideo = player.on('timeupdate', function (data) {
     // throttle((currentTime), 3000)
     // console.log(currentTime);
     
-    throttle(playVideo, 3000)
-localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
+    // throttle(playVideo, 3000)
+
+throttle(localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime)), 3000);
 });
