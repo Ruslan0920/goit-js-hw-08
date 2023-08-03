@@ -17,8 +17,8 @@ console.log(player);
 //     console.log(e);
 
 // }
-
-player.on('timeupdate', function (data) {
+function playVideo (){
+    player.on('timeupdate', function (data) {
     // console.log(data);
     
     const currentTime = data;
@@ -34,9 +34,15 @@ player.on('timeupdate', function (data) {
 
         // throttle((localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime))), 3000)
 
-    localStorage.setItem.throttle((LOCALSTORAGE_KEY, JSON.stringify(currentTime), 3000));
-    
+    const local = localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
+
+//     player.getCurrentTime(currentTime).then(function(seconds) {
+//     // seconds = the actual time that the player seeked to
+// })
+    return local
 });
+
+}
 
 // const input = document.querySelector(".js-inp")
 // console.log(input);
@@ -45,3 +51,7 @@ player.on('timeupdate', function (data) {
 // function dataInput(e) {
 //     console.log(e.target.value);
 // }
+
+// player.setCurrentTime(currentTime).then(function(seconds) {
+//     // seconds = the actual time that the player seeked to
+// })
