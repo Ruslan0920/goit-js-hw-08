@@ -11,8 +11,8 @@ const iframe = document.querySelector('iframe');
 
 const player = new Player(iframe)
 console.log(player);
-iframe.addEventListener('onplaying', throttle(playVideo, 3000));
-console.log(iframe);
+// iframe.addEventListener('onplaying', throttle(playVideo, 3000));
+// console.log(iframe);
 
 playVideo()
 
@@ -22,16 +22,15 @@ function playVideo() {
     
 const currentTime = data;
     //    console.log(currentTime);
-   
-    //    function addToLocal() {}
-                //   throttle(addToLocal, 3000)
+
 localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
-    //    throttle(add, 3000)
-    //    console.log(add);
+
     //    throttle(playVideo,3000)
     //    throttle(localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime)), 3000)    
-}); 
+   }); 
+    // throttle(playVideo, 3000);
 }
+// throttle(playVideo, 3000);
 
 timeCurrent()
         
