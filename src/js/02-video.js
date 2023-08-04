@@ -8,12 +8,13 @@ const LOCALSTORAGE_KEY = "videoplayer-current-time";
 
 const iframe = document.querySelector('iframe');
 console.log(iframe);
+
+console.log(iframe);
 const player = new Player(iframe)
 console.log(player);
+// iframe.addEventListener('timeupdate', throttle(player.on, 3000))
 
 playVideo()
-console.log(throttle(playVideo, 5000));
-
 
 function playVideo() {
    player.on('timeupdate', function (data) {
@@ -21,15 +22,15 @@ function playVideo() {
     
 const currentTime = data;
        console.log(currentTime);
-       
+ throttle(player.on, 3000)      
     //    function addToLocal() {}
                 //   throttle(addToLocal, 3000)
-       const add = localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
+localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
     //    throttle(add, 3000)
     //    console.log(add);
+    //    throttle(playVideo,3000)
 }); 
 }
-
 
 timeCurrent()
         
@@ -38,7 +39,7 @@ const getTime = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
     console.log(getTime.seconds);
     player.setCurrentTime(getTime.seconds).then(function(seconds) {
     // seconds = the actual time that the player seeked to
-        console.log(seconds);
+        // console.log(seconds);
 })
     
 }   
