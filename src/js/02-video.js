@@ -11,17 +11,23 @@ const iframe = document.querySelector('iframe');
 
 const player = new Player(iframe)
 console.log(player);
-// iframe.addEventListener('onplaying', throttle(playVideo, 3000));
-// console.log(iframe);
+document.addEventListener('currentTime', throttle(playVideo, 3000));
+console.log(addEventListener);
 
 playVideo()
+// throttle(playVideo,3000)
 
 function playVideo() {
    player.on('timeupdate', function (data) {
-       console.log(data);
+    //    console.log(data);
     
 const currentTime = data;
     //    console.log(currentTime);
+       
+    //    throttle(() => {
+    // localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
+    //    }, 3000)
+
 
 localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
 
