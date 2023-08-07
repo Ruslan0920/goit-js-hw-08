@@ -7,35 +7,36 @@ console.log(throttle);
 const LOCALSTORAGE_KEY = "videoplayer-current-time";
 
 const iframe = document.querySelector('iframe');
-// console.log(iframe);
+console.log(iframe);
 
 const player = new Player(iframe)
-console.log(player);
-document.addEventListener('currentTime', throttle(playVideo, 3000));
+// console.log(player);
+iframe.addEventListener('ontimeupdate', throttle(playVideo, 3000));
 console.log(addEventListener);
-
-playVideo()
-// throttle(playVideo,3000)
+let objectTime = {};
 
 function playVideo() {
-   player.on('timeupdate', function (data) {
-    //    console.log(data);
+const timeAll = player.on('timeupdate', function (data) {
+       console.log(data);
+    console.log(objectTime);
     
-const currentTime = data;
-    //    console.log(currentTime);
+    const timer = data;
+    objectTime = timer
+    //    console.log(timer);
        
     //    throttle(() => {
     // localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
     //    }, 3000)
 
 
-localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
+localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer));
 
     //    throttle(playVideo,3000)
     //    throttle(localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime)), 3000)    
    }); 
     // throttle(playVideo, 3000);
 }
+playVideo()
 // throttle(playVideo, 3000);
 
 timeCurrent()
