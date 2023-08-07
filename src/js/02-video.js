@@ -10,34 +10,25 @@ const iframe = document.querySelector('iframe');
 console.log(iframe);
 
 const player = new Player(iframe)
-// console.log(player);
-iframe.addEventListener('ontimeupdate', throttle(playVideo, 3000));
-console.log(addEventListener);
-let objectTime = {};
+console.log(player);
+// iframe.addEventListener('timeupdate', throttle(playVideo, 3000));
+// // console.log(iframe.addEventListener);
+
+playVideo()
 
 function playVideo() {
-const timeAll = player.on('timeupdate', function (data) {
-       console.log(data);
-    console.log(objectTime);
+player.on('timeupdate', function (data) {
+    // console.log(player.target.value);
     
     const timer = data;
-    objectTime = timer
-    //    console.log(timer);
-       
-    //    throttle(() => {
-    // localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime));
-    //    }, 3000)
-
+    console.log(timer);
 
 localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer));
-
-    //    throttle(playVideo,3000)
-    //    throttle(localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(currentTime)), 3000)    
-   }); 
-    // throttle(playVideo, 3000);
+    // throttle(() => {localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer))},3000)
+});
 }
-playVideo()
-// throttle(playVideo, 3000);
+
+
 
 timeCurrent()
         
