@@ -11,24 +11,32 @@ console.log(iframe);
 
 const player = new Player(iframe)
 console.log(player);
-// iframe.addEventListener('timeupdate', throttle(playVideo, 3000));
+// iframe.addEventListener('currentTime', throttle(playVideo, 3000));
 // // console.log(iframe.addEventListener);
 
-playVideo()
+// playVideo()
 
-function playVideo() {
-player.on('timeupdate', function (data) {
-    // console.log(player.target.value);
+// function playVideo() {
+// player.on('timeupdate', function (data) {
+//     // console.log(player.target.value);
     
+//     const timer = data;
+//     console.log(timer);
+
+// localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer));
+//     // throttle(() => {localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer))},3000)
+// });
+// }
+
+const onPlay = function(data) {
+    // data is an object containing properties specific to that event
     const timer = data;
     console.log(timer);
-
 localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer));
-    // throttle(() => {localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer))},3000)
-});
-}
+};
 
-
+player.on('timeupdate', onPlay);
+throttle(() =>{onPlay}, 3000)
 
 timeCurrent()
         
