@@ -11,7 +11,7 @@ console.log(iframe);
 
 const player = new Player(iframe)
 console.log(player);
-// iframe.addEventListener('currentTime', throttle(playVideo, 3000));
+// iframe.addEventListener('currentTime', throttle(onPlay, 3000));
 // // console.log(iframe.addEventListener);
 
 // playVideo()
@@ -34,9 +34,10 @@ const onPlay = function(data) {
     console.log(timer);
 localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer));
 };
+console.log(onPlay);
 
 player.on('timeupdate', onPlay);
-throttle(() =>{onPlay}, 3000)
+// throttle(() =>{onPlay}, 3000)
 
 timeCurrent()
         
