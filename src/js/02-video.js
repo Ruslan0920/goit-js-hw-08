@@ -11,8 +11,8 @@ console.log(iframe);
 
 const player = new Player(iframe)
 console.log(player);
-// iframe.addEventListener('currentTime', throttle(onPlay, 3000));
-// // console.log(iframe.addEventListener);
+// iframe.addEventListener('ontimeupdate', throttle(playVideo, 3000));
+// // // console.log(iframe.addEventListener);
 
 // playVideo()
 
@@ -28,16 +28,17 @@ console.log(player);
 // });
 // }
 
-const onPlay = function(data) {
+const onPlay = throttle(function(data) {
     // data is an object containing properties specific to that event
     const timer = data;
     console.log(timer);
-localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer));
-};
-console.log(onPlay);
+    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer));
+    
+}, 3000);
 
 player.on('timeupdate', onPlay);
 // throttle(() =>{onPlay}, 3000)
+console.log(onPlay);
 
 timeCurrent()
         
