@@ -2,15 +2,15 @@ import Player from '@vimeo/player';
 // console.log(Player);
 
 const throttle = require("lodash.throttle");
-console.log(throttle);
+// console.log(throttle);
 
 const LOCALSTORAGE_KEY = "videoplayer-current-time";
 
 const iframe = document.querySelector('iframe');
-console.log(iframe);
+// console.log(iframe);
 
 const player = new Player(iframe)
-console.log(player);
+// console.log(player);
 // iframe.addEventListener('ontimeupdate', throttle(playVideo, 3000));
 // // // console.log(iframe.addEventListener);
 
@@ -29,16 +29,13 @@ console.log(player);
 // }
 
 const onPlay = throttle(function(data) {
-    // data is an object containing properties specific to that event
-    const timer = data;
-    console.log(timer);
-    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timer));
+    const timerVideo = data;
+    console.log(timerVideo);
+    localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(timerVideo));
     
-}, 3000);
+}, 1000);
 
 player.on('timeupdate', onPlay);
-// throttle(() =>{onPlay}, 3000)
-console.log(onPlay);
 
 timeCurrent()
         
